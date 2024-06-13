@@ -1,16 +1,42 @@
-## Hi there 👋
+let palavra;
 
-<!--
-**Yukizinho-oo-Ays/Yukizinho-oo-Ays** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+function setup() {
+  createCanvas(400, 400);
 
-Here are some ideas to get you started:
+  palavra = palavraAleatoria();
+}
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+function palavraAleatoria(){
+  let palavras = ["Caminhante", "Caminho", "Caminha"];
+  return random(palavras);
+}
+
+function inicializaCores() {
+
+  background("white");
+  fill("black");
+  textSize(64);
+  textAlign(CENTER, CENTER);
+}
+
+function palavraParcial(minimo, maximo) {
+  let quantidade = map(mouseX, minimo, maximo, 1, palavra.length);
+  let parcial = palavra.substring(0, quantidade);
+  return parcial;
+}
+
+function draw() {
+
+  inicializaCores();
+
+  let texto = palavraParcial(0, width);
+  text(texto, 200, 200);
+}
+
+function filmesParaAssistir(diaDaSemana, genero) {
+
+  // ...
+
+  return sugestaoFilme;
+}
+
